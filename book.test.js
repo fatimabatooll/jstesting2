@@ -18,4 +18,15 @@ test ("addBook", () => {
     expect(result).toBe(1);
     
 })   
-
+test('removeBook', () => {
+    //SetUp
+    const arr = new ReadingArray();
+    const arr2 = new ReadingArray();
+    const book = new Book("Martian","Davidoff",362,2004);
+    const book2 = new Book("how to resist", "Good me", 308, 2001 );
+    arr.addBook(book, "sep 1", 4);
+    arr.removeBook("Martian");
+    arr2.addBook(book2, "Sep 5", 4);
+    // Execute
+    const result = arr.toEqual(arr2.getBook());
+})
