@@ -29,6 +29,16 @@ addBook(book, dateRead, rating){
     book.setDate(dateRead);
     book.setRating(rating) 
 }
-
+removeBook(title){
+    for(let i = 0; i < this.books.length; i++){
+        if(this.books[i].getTitle() === title){
+            this.books.splice(i, 1);
+            break;
+        }
+    }
+}
+getBook(){
+    return this.books;
+}
 }
 module.exports = {ReadingArray, Book}
