@@ -17,7 +17,19 @@ test ("addBook", () => {
     //assert
     expect(result).toBe(1);
     
-})   
+}) 
+test('addionalbook', () => {
+    //setup
+    const arr =new ReadingArray();
+    const book = new Book('Martian', "Davidoff", 362, 2004);
+    const book2 = new Book("Atomic Habbts", "hello", 365, 2021 );
+    arr.addBook(book, "Sep 1", 5);
+    arr.addBook(book2, "Sep 5", 7);
+    //Execute
+    const result = arr.numRead();
+    //aseert
+    expect(result).toBe(2);
+})  
 test('removeBook', () => {
     // Set up
     const arr = new ReadingArray();
