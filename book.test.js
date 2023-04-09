@@ -59,3 +59,19 @@ test("getBook", () => {
     expect(arr2.getBook()).toEqual(result)
 
 })
+test("getBooksByRating", () => {
+    const arr =new ReadingArray();
+    const arr2 = new ReadingArray();
+    const book = new Book("atomic1", "nisha", 50, 2020);
+    const book2 = new Book("atomic2", "sara", 70, 2019);
+    const book3 = new Book ("atomic3", "zara", 77, 2022 );
+    arr.addBook(book, "Sep 1", 1);
+    arr.addBook(book2, "Sep 3", 3);
+    arr.addBook(book3, "Sep 4", 4);
+    arr2.addBook(book2, "Sep 6", 7);
+    arr2.addBook(book3, "Sep 5", 5);
+    // execute
+    const result = arr.getBookByRating(5);
+    // assert
+    expect(result).toEqual(arr2.getBook());
+})
