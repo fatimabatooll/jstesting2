@@ -37,8 +37,6 @@ removeBook(title){
         }
     }
 }
-getBook(){
-    return this.books;
-}
+
 }
 module.exports = {ReadingArray, Book}

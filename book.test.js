@@ -45,3 +45,17 @@ test('removeBook', () => {
     expect(arr.numRead()).toBe(1);
 });
 
+test("getBook", () => {
+    // setup 
+    const arr = new ReadingArray();
+    const arr2 = new ReadingArray();
+    const book = new Book ("power", "noor", 40, 2003 )
+    arr.addBook(book, "sep 4", 4);
+    arr2.addBook(book, "sep 4", 4);
+
+    //Execute
+    const result = arr.getBook();
+    //assert
+    expect(arr2.getBook()).toEqual(result)
+
+})
