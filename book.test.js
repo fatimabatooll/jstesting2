@@ -1,4 +1,4 @@
-const {ReadingArray} = require('./book')
+const {ReadingArray, Book} = require('./book')
 test("ReadingArray", () => {
     //SetUp
     const arr = new ReadingArray();
@@ -18,3 +18,4 @@ test ("addBook", () => {
     expect(result).toBe(1);
     
 })   
+
