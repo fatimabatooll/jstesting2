@@ -14,6 +14,10 @@ class Book {
     setRating(ratingInput){
         this.rating = ratingInput;
     }
+    getRating(){
+        return this.rating;
+
+    }
 
 }
 class ReadingArray {
@@ -39,6 +43,15 @@ removeBook(title){
 }
 getBook(){
     return this.books;
+}
+getBookByRating(rating){
+    const ratedBooks = []
+    for (let i = 0; i< this.books.length; i++){
+        if(this.books[i].getRating() === rating){
+            ratedBooks.push(this.books[i]);
+        }
+    }
+    return ratedBooks;
 }
 }
 module.exports = {ReadingArray, Book}

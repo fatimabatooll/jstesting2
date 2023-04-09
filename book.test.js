@@ -60,18 +60,21 @@ test("getBook", () => {
 
 })
 test("getBooksByRating", () => {
-    const arr =new ReadingArray();
-    const arr2 = new ReadingArray();
-    const book = new Book("atomic1", "nisha", 50, 2020);
+    const arr = new ReadingArray();
+    const book1 = new Book("atomic1", "nisha", 50, 2020);
     const book2 = new Book("atomic2", "sara", 70, 2019);
-    const book3 = new Book ("atomic3", "zara", 77, 2022 );
-    arr.addBook(book, "Sep 1", 1);
+    const book3 = new Book("atomic3", "zara", 77, 2022);
+    const book4 = new Book("atomic4", "jane", 100, 2021);
+    arr.addBook(book1, "Sep 1", 1);
     arr.addBook(book2, "Sep 3", 3);
-    arr.addBook(book3, "Sep 4", 4);
-    arr2.addBook(book2, "Sep 6", 7);
-    arr2.addBook(book3, "Sep 5", 5);
-    // execute
+    arr.addBook(book3, "Sep 4", 5);
+    arr.addBook(book4, "Sep 5", 5);
+
+    // Execute
     const result = arr.getBookByRating(5);
-    // assert
-    expect(result).toEqual(arr2.getBook());
-})
+
+    // Assert
+    expect(result.length).toBe(2);
+    expect(result).toContain(book3);
+    expect(result).toContain(book4);
+});
