@@ -28,5 +28,7 @@ test('removeBook', () => {
     arr.removeBook("Martian");
     arr2.addBook(book2, "Sep 5", 4);
     // Execute
-    const result = arr.toEqual(arr2.getBook());
+    const result = arr.getBook();
+    // assert
+    expect (result).toEqual(arr2.getBook());
 })

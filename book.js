@@ -29,5 +29,7 @@ addBook(book, dateRead, rating){
     book.setDate(dateRead);
     book.setRating(rating) 
 }
+
+
 }
 module.exports = {ReadingArray, Book}
