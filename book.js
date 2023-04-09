@@ -30,6 +30,5 @@ addBook(book, dateRead, rating){
     book.setRating(rating) 
 }
 
-
 }
 module.exports = {ReadingArray, Book}

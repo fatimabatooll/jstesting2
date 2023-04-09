@@ -19,16 +19,17 @@ test ("addBook", () => {
     
 })   
 test('removeBook', () => {
-    //SetUp
+    // Set up
     const arr = new ReadingArray();
-    const arr2 = new ReadingArray();
     const book = new Book("Martian","Davidoff",362,2004);
     const book2 = new Book("how to resist", "Good me", 308, 2001 );
     arr.addBook(book, "sep 1", 4);
-    arr.removeBook("Martian");
-    arr2.addBook(book2, "Sep 5", 4);
+    arr.addBook(book2, "sep 2", 5);
+
     // Execute
-    const result = arr.getBook();
-    // assert
-    expect (result).toEqual(arr2.getBook());
-})
+    arr.removeBook("Martian");
+
+    // Assert
+    expect(arr.numRead()).toBe(1);
+});
+
